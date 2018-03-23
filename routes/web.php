@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 //后台部分=================================
 Route::get('/admin/index','Admin\indexController@index');
+
+Route::get('/admin/login','Admin\loginController@login');
