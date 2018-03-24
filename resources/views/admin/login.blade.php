@@ -17,17 +17,17 @@
             </ul>
         </div>
     @endif
-        <div class="message">x-admin2.0-管理登录</div>
+        <div class="message">x-admin2.0-管理登录</div>  
         <div id="darkbannerwrap"></div>
 
-        <form method="post" class="layui-form" action="{{ url('admins/dologin') }}">
+        <form method="post" class="layui-form" action="{{ url('admin/dologin') }}">
             {{ csrf_field() }}
             <input name="username" placeholder="用户名" value="{{old('username')}}" type="text" lay-verify="required" class="layui-input" >
             <hr class="hr15">
             <input name="password" lay-verify="required" placeholder="密码" type="password" class="layui-input">
             <hr class="hr15">
-            <input name="code" lay-verify="required" placeholder="验证码"  type="text" class="layui-input" style="width:200px;height:40px">
-            <img src="{{url('admins/code')}}" onclick="this.src='{{ url('/admins/code') }}?'+Math.random()"alt=""style="float:right;position:relative;top:-34px;left:0px">
+            <input name="code" lay-verify="required" placeholder="验证码"  type="text" class="layui-input" style="width:150px;height:40px">
+            <img src="{{ url('/admin/code')}}" onclick="this.src='{{ url('/admin/code') }}?'+Math.random()" alt=""style="width:150px;float:right;position:relative;top:-43px;left:0px">
             <hr class="hr15">
             <input value="登录" lay-submit lay-filter="login" style="width:100%;" type="submit">
             <hr class="hr20" >

@@ -9,8 +9,8 @@
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    @include('admin.public.styles')
-    @include('admin.public.script')
+    @include('public.styles')
+    @include('public.script')
 
 </head>
 
