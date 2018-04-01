@@ -12,4 +12,9 @@ class indexController extends Controller
     {
     	return view('admin.index');
     }
+    // 欢迎页面
+    public function welcome()
+    {
+    	return view('admin.welcome');
+    }
 }
