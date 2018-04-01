@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>后台登录-X-admin2.0</title>
+	<title>后台主页-X-admin2.0</title>
 	<meta name="renderer" content="webkit|ie-comp|ie-stand">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
@@ -17,7 +17,7 @@
 
 </head>
 <body>
-    <!-- 顶部开始 -->
+        <!-- 顶部开始 -->
     <div class="container">
         <div class="logo"><a href="./index.html">X-admin v2.0</a></div>
         <div class="left_open">
@@ -39,7 +39,7 @@
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
               <dd><a onclick="x_admin_show('个人信息','http://www.baidu.com')">个人信息</a></dd>
               <dd><a onclick="x_admin_show('切换帐号','http://www.baidu.com')">切换帐号</a></dd>
-              <dd><a href="./login.html">退出</a></dd>
+              <dd><a href="{{ url('admin/logout') }}">退出</a></dd>
             </dl>
           </li>
           <li class="layui-nav-item to-index"><a href="/">前台首页</a></li>
@@ -60,49 +60,10 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="member-list.html">
+                        <a _href="{{ url('admin/user') }}">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>会员列表</cite>
-                            
                         </a>
-                    </li >
-                    <li>
-                        <a _href="member-del.html">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>会员删除</cite>
-                            
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <i class="iconfont">&#xe70b;</i>
-                            <cite>会员管理</cite>
-                            <i class="iconfont nav_right">&#xe697;</i>
-                        </a>
-                        <ul class="sub-menu">
-                            <li>
-                                <a _href="xxx.html">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    <cite>会员列表</cite>
-                                    
-                                </a>
-                            </li >
-                            <li>
-                                <a _href="xx.html">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    <cite>会员删除</cite>
-                                    
-                                </a>
-                            </li>
-                            <li>
-                                <a _href="xx.html">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    <cite>等级管理</cite>
-                                    
-                                </a>
-                            </li>
-                            
-                        </ul>
                     </li>
                 </ul>
             </li>
@@ -124,32 +85,32 @@
             <li>
                 <a href="javascript:;">
                     <i class="iconfont">&#xe726;</i>
-                    <cite>管理员管理</cite>
+                    <cite>商品页面</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="admin-list.html">
+                        <a _href="{{ url('admin/goods') }}">
                             <i class="iconfont">&#xe6a7;</i>
-                            <cite>管理员列表</cite>
+                            <cite>商品管理</cite>
                         </a>
                     </li >
                     <li>
                         <a _href="admin-role.html">
                             <i class="iconfont">&#xe6a7;</i>
-                            <cite>角色管理</cite>
+                            <cite>管理</cite>
                         </a>
                     </li >
                     <li>
                         <a _href="admin-cate.html">
                             <i class="iconfont">&#xe6a7;</i>
-                            <cite>权限分类</cite>
+                            <cite>分类</cite>
                         </a>
                     </li >
                     <li>
                         <a _href="admin-rule.html">
                             <i class="iconfont">&#xe6a7;</i>
-                            <cite>权限管理</cite>
+                            <cite>管理</cite>
                         </a>
                     </li >
                 </ul>
@@ -224,7 +185,7 @@
           </ul>
           <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
-                <iframe src='./welcome.html' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
+                <iframe src='{{ url('admin/info') }}' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
             </div>
           </div>
         </div>

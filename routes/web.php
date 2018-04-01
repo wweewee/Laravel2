@@ -11,19 +11,38 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-//后台部分=================================
-	//后台主页
-	Route::get('/admin/index','Admin\indexController@index');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+//=============后台部分================================================
+//后台登录---------------------------------
+Route::group(['prefix'=>'admin','namespace'=>'Admin'],function(){
 	//后台登录
-	Route::get('/admin/login','Admin\loginController@login');
+	Route::get('/login','loginController@login');
 	//生成验证码
-	Route::get('admin/code','Admin\loginController@Code');
+	Route::get('/code','loginController@Code');
 	//登录处的逻辑
-	Route::post('admin/dologin','Admin\loginController@dologin');
+	Route::post('/dologin','loginController@dologin');
 	// 第三方组件生成验证码的路由
-	Route::get('/code/captcha/{id}','Admin\loginController@captcha');
+	Route::get('/code/captcha/{id}','loginController@captcha');
 	//加密
-	Route::get('/admin/jiami','Admin\loginController@jiami');
+	Route::get('/jiami','loginController@jiami');
+});
+	
+
+Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>'isLogin'],function(){
+	//后台主页
+	Route::get('index','indexController@index');
+	//后台信息页
+    Route::get('info','indexController@info');
+	//退出登录
+    Route::get('logout','indexController@logout');
+
+	//后台分类模块------------------------------
+	Route::post('cate/changeorder','CateController@changeOrder');
+
+	//后台商品模块----------------------------------
+	
+	Route::post('goods/uploads','GoodsController@upload');
+	Route::resource('goods','GoodsController');
+});

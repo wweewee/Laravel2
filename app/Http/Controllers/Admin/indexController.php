@@ -12,4 +12,17 @@ class indexController extends Controller
     {
     	return view('admin.index');
     }
+    // 内容欢迎页
+    public function info()
+    {
+        return view('admin.welcome');
+    }
+    
+    //退出登录
+    public function logout()
+    {
+        session()->forget('user');
+
+        return redirect('admin/login');
+    }
 }
