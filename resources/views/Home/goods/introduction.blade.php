@@ -69,7 +69,7 @@
 				</div>
 
 				<!--放大镜-->
-
+				@foreach($data as $v)
 				<div class="item-inform">
 					<div class="clearfixLeft" id="clearcontent">
 
@@ -116,7 +116,7 @@
 						<!--名称-->
 						<div class="tb-detail-hd">
 							<h1>	
-							良品铺子 手剥松子218g 坚果炒货 巴西松子
+							{{$v -> gname}}
 						</h1>
 						</div>
 						<div class="tb-detail-list">
@@ -124,12 +124,9 @@
 							<div class="tb-detail-price">
 								<li class="price iteminfo_price">
 									<dt>促销价</dt>
-									<dd><em>¥</em><b class="sys_item_price">56.90</b>  </dd>                                 
+									<dd><em>¥</em><b class="sys_item_price">{{$v -> money}}</b>  </dd>                                 
 								</li>
-								<li class="price iteminfo_mktprice">
-									<dt>原价</dt>
-									<dd><em>¥</em><b class="sys_item_mktprice">98.00</b></dd>									
-								</li>
+								
 								<div class="clear"></div>
 							</div>
 
@@ -164,7 +161,7 @@
 									<div class="tm-indcon"><span class="tm-label">月销量</span><span class="tm-count">1015</span></div>
 								</li>
 								<li class="tm-ind-item tm-ind-sumCount canClick">
-									<div class="tm-indcon"><span class="tm-label">累计销量</span><span class="tm-count">6015</span></div>
+									<div class="tm-indcon"><span class="tm-label">累计销量</span><span class="tm-count">{{$v->salecnt}}</span></div>
 								</li>
 								<li class="tm-ind-item tm-ind-reviewCount canClick tm-line3">
 									<div class="tm-indcon"><span class="tm-label">累计评价</span><span class="tm-count">640</span></div>
@@ -213,9 +210,8 @@
 															<input id="min" class="am-btn am-btn-default" name="" type="button" value="-" />
 															<input id="text_box" name="" type="text" value="1" style="width:30px;" />
 															<input id="add" class="am-btn am-btn-default" name="" type="button" value="+" />
-															<span id="Stock" class="tb-hidden">库存<span class="stock">1000</span>件</span>
+															<span id="Stock" class="tb-hidden">库存<span class="stock">{{$v->number}}</span>件</span>
 														</dd>
-
 													</div>
 													<div class="clear"></div>
 
@@ -286,7 +282,7 @@
 					<div class="clear"></div>
 
 				</div>
-
+				@endforeach
 				<!--优惠套装-->
 				<div class="match">
 					<div class="match-title">优惠套装</div>

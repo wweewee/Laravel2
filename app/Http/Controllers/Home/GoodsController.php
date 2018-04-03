@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Model\Goods;
 class GoodsController extends Controller
 {
-    // 
+    // 商品列表
     public function list()
     {
         $res = Goods::get();
@@ -15,10 +15,12 @@ class GoodsController extends Controller
         return view('home.goods.list', compact('res'));
     }
 
+    // 商品详情
     public function details($id)
     {   
+
+        $data = Goods::where('did',$id)->get();
         
-        // 商品列表
         return view('home.goods.introduction',compact('data'));
         
     }
