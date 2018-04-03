@@ -116,8 +116,8 @@
 						<!--名称-->
 						<div class="tb-detail-hd">
 							<h1>	
-				 良品铺子 手剥松子218g 坚果炒货 巴西松子
-	          </h1>
+							良品铺子 手剥松子218g 坚果炒货 巴西松子
+						</h1>
 						</div>
 						<div class="tb-detail-list">
 							<!--价格-->

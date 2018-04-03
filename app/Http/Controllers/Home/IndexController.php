@@ -27,12 +27,4 @@ class IndexController extends Controller
         return view('home.index.index', compact('cate_one','arr'));
         // dd($cates);
     }
-
-
-
-    public function list()
-    {
-        return view('home.goods.list');
-    }
-   
 }

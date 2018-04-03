@@ -42,7 +42,7 @@
               <dd><a href="#">退出</a></dd>
             </dl>
           </li>
-          <li class="layui-nav-item to-index"><a href="/">前台首页</a></li>
+          <li class="layui-nav-item to-index"><a href="/home/index">前台首页</a></li>
         </ul>
         
     </div>

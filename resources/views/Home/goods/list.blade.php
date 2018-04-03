@@ -19,7 +19,6 @@
 	</head>
 
 	<body>
-
 			@include('home.inherit.header')
 			<b class="line"></b>
            <div class="search">
@@ -27,8 +26,6 @@
 			<div class="nav-table">
 			@include('home.inherit.nav')
 			</div>
-			
-				
 					<div class="am-g am-g-fixed">
 						<div class="am-u-sm-12 am-u-md-12">
 	                  	<div class="theme-popover">														
@@ -37,50 +34,28 @@
 								<a title="坚果" href="#">坚果</a>
 								<a title="瓜子" href="#">瓜子</a>
 								<a title="鸡腿" href="#">豆干</a>
-
 							</div>
 							<div class="clear"></div>
                         </div>
 							<div class="search-content">
-								
-
 								<ul class="am-avg-sm-2 am-avg-md-3 am-avg-lg-4 boxes">
-									
-								
-									
-									
-									
+								@foreach($res as $v)
 									<li>
-										<div class="i-pic limit">
-											
-											<img src="/home/images/imgsearch1.jpg" />
-											<p class="title fl">【良品铺子旗舰店】手剥松子218g 坚果炒货零食新货巴西松子包邮</p>
+										<div class="i-pic limit">											
+											<a href="introduction/{{$v ->did }}"><img src="{{$v -> fileupload}}" /></a>
+											<p class="title fl">{{$v -> gname}}</p>
 											<p class="price fl">
 												<b>¥</b>
-												<strong>56.90</strong>
+												<strong>{{$v -> money}}</strong>
 											</p>
 											<p class="number fl">
-												销量<span>1110</span>
+												销量<span>{{$v -> salecnt}}</span>
 											</p>
 										</div>
 									</li>
-									<li>
-										<div class="i-pic limit">
-											
-											<img src="/home/images/imgsearch1.jpg" />
-											<p class="title fl">【良品铺子旗舰店】手剥松子218g 坚果炒货零食新货巴西松子包邮</p>
-											<p class="price fl">
-												<b>¥</b>
-												<strong>56.90</strong>
-											</p>
-											<p class="number fl">
-												销量<span>1110</span>
-											</p>
-										</div>
-									</li>
+								@endforeach
 								</ul>
-							</div>
-						
+							</div>						
 							<div class="clear"></div>
 							<!--分页 -->
 							<ul class="am-pagination am-pagination-right">

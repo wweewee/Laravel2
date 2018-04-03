@@ -29,7 +29,6 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function(){
     Route::get('cate/{id}/edit','CateController@edit');
     Route::post('cate/update','CateController@update');
     Route::get('cate/{id}','CateController@del');
-    
 });
 
 
@@ -44,15 +43,13 @@ Route::group(['prefix'=>'home','namespace'=>'Home'/*, 'middleware'=>'islogin' */
     Route::get('userinfo','UserController@userinfo');
 
     // 完善个人信息
-    Route::post('userinfo_create','Home\UserController@userinfo_create');
+    Route::post('userinfo_create','UserController@userinfo_create');
     // 首页
     Route::get('index','IndexController@index');
     // 商品分类
-
-    Route::get('list','IndexController@list');
-	
-
-
+    Route::get('list','GoodsController@list');
+    // 详情表
+    Route::get('details/{id}','GoodsController@details');
 });
 
 

@@ -67,11 +67,11 @@
                                         <li class="appliance js_toggle relative">
                                        
                                             <div class="category-info">
-                                                <h3 class="category-name b-category-name">
+                                                <h3 class="category-name b-category-name" style="cursor:pointer;">
                                                     <i>
                                                         <img src="/home/images/tea.png">
                                                     </i>
-                                                    <a class="ml-22" title="花茶">
+                                                    <a class="ml-22" title="花茶" >
                                                        {{$v->name}}
                                                     </a>
                                                 </h3>
@@ -88,7 +88,7 @@
                                                                 <dl class="dl-sort">
                                                                 @foreach($arr[$v->name] as $m=>$n)
                                                                     <dd>
-                                                                        <a title="" href="#">
+                                                                        <a title="" href="#" style="cursor:pointer;">
                                                                             <span>
                                                                             {{$n['name']}}
                                                                             </span>
