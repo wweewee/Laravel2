@@ -49,12 +49,11 @@
               <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;全选</i></div>
             </th>
             <th>ID</th>
-            <th>类别</th>
+            <th>商品类别</th>
             <th>图片</th>
             <th>商品名</th>
             <th>金额</th>
             <th>库存</th>
-            <th>销量</th>
             <th>描述</th>
             <th>详情</th>
             <th>操作</th>
@@ -66,12 +65,11 @@
               <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
             </td>
             <td>{{$v->did}}</td>
-            <td>{{$v->gid}}</td>
-            <td><img src="/uploads/{{$v->fileupload}}" alt=""></td>
+            <td>{{$v->cid}}</td>
+            <td><img src="{{$v->fileupload}}" alt=""></td>
             <td>{{$v->gname}}</td>
             <td>{{$v->money}}</td>
             <td>{{$v->number}}</td>
-            <td>{{$v->salecnt}}</td>
             <td>{{$v->depict}}</td>
             <td>{{$v->content}}</td>
             <td class="td-manage">
@@ -113,28 +111,28 @@
       })
 
        /*用户-停用*/
-      function member_stop(obj,id){
-          layer.confirm('确认要停用吗？',function(index){
+      // function member_stop(obj,id){
+      //     layer.confirm('确认要停用吗？',function(index){
 
-              if($(obj).attr('title')=='启用'){
+      //         if($(obj).attr('title')=='启用'){
 
-                //发异步把用户状态进行更改
-                $(obj).attr('title','停用')
-                $(obj).find('i').html('&#xe62f;');
+      //           //发异步把用户状态进行更改
+      //           $(obj).attr('title','停用')
+      //           $(obj).find('i').html('&#xe62f;');
 
-                $(obj).parents("tr").find(".td-status").find('span').addClass('layui-btn-disabled').html('已停用');
-                layer.msg('已停用!',{icon: 5,time:1000});
+      //           $(obj).parents("tr").find(".td-status").find('span').addClass('layui-btn-disabled').html('已停用');
+      //           layer.msg('已停用!',{icon: 5,time:1000});
 
-              }else{
-                $(obj).attr('title','启用')
-                $(obj).find('i').html('&#xe601;');
+      //         }else{
+      //           $(obj).attr('title','启用')
+      //           $(obj).find('i').html('&#xe601;');
 
-                $(obj).parents("tr").find(".td-status").find('span').removeClass('layui-btn-disabled').html('已启用');
-                layer.msg('已启用!',{icon: 5,time:1000});
-              }
+      //           $(obj).parents("tr").find(".td-status").find('span').removeClass('layui-btn-disabled').html('已启用');
+      //           layer.msg('已启用!',{icon: 5,time:1000});
+      //         }
               
-          });
-      }
+      //     });
+      // }
 
       /*用户-删除*/
       function member_del(obj,did){

@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Model\Goods;
+use App\Model\Admin\Cate;
 use Session;
 
 class GoodsController extends Controller
 {
-
      //文件上传
     public function upload(Request $request)
     {   
@@ -25,8 +25,12 @@ class GoodsController extends Controller
             //1.将文件传到本地服务器上
             $path = $file->move(public_path().'/uploads',$newfile);
 
+            $newfile = '/uploads/'.$newfile;
+
+
             //2.返回上传文件路径
-            return '/uploads/'.$newfile;
+            return $newfile;
+
         }
         
     }
@@ -38,7 +42,6 @@ class GoodsController extends Controller
      */
     public function index(Request $request)
     {
-        
         $goods = Goods::all();
         // dd($goods);
 
@@ -56,8 +59,11 @@ class GoodsController extends Controller
      */
     public function create()
     {
+        $cate = Cate::all();
+        $cate = Cate::Cates($cate);
+//        dd($cate);
         //添加商品
-        return view('admin.goods.add');
+        return view('admin.goods.add',compact('cate'));
     }
 
     /**
@@ -68,11 +74,11 @@ class GoodsController extends Controller
      */
     public function store(Request $request)
     {
-
+        
         //接受添加
         $input = $request->all();      //1.获取表单添加的数据
         $goods = new Goods();
-        // dd($input);
+         // return($input);
         //2.添加到数据表              
         // $goods -> gname = $input['gname'];   
         // $goods -> money = $input['money'];
@@ -83,17 +89,18 @@ class GoodsController extends Controller
             'fileupload'=>$input['fileupload'],
             'number'=>$input['number'],
             'content'=>$input['content'],
-            'gid'=>$input['gid'],
             'depict'=>$input['depict'],
             'gname'=>$input['gname'],
-            'salecnt'=>$input['salecnt']]);
+            'cid'=>$input['cid']
+            ]);
+
         // dd($res);
         //判断是否添加成功
         if($res){
             // return redirect('admin/goods')->with('msg','添加成功');
             $arr = [
                 'status'=>0,
-                'msg'=>'添加成功'
+                'msg'=>'添加成功了'
             ];
         }else{
             $arr = [
@@ -101,8 +108,8 @@ class GoodsController extends Controller
             'msg'=>'添加失败'
             ];
         }
-       // return $arr; 
-        return redirect('admin/goods/');
+       return $arr; 
+        // return redirect('admin/goods/');
     }
 
     /**
@@ -124,11 +131,15 @@ class GoodsController extends Controller
      */
     public function edit($id)
     {
+        $cate = Cate::all();
+        $cate = Cate::Cates($cate);
+//        dd($cate);
+        //添加商品
+        // return view('admin.goods.edit',compact('cate'));
         //通过id查询单条数据
         $goods = Goods::findOrFail($id);
         // dd($goods);
-        return view('admin.goods.edit',compact('goods'));
-
+        return view('admin.goods.edit',compact('goods','cate'));
 
     }
 
@@ -141,23 +152,25 @@ class GoodsController extends Controller
      */
     public function update(Request $request,$did)
     {   
-        // return 1111;
+            
+
         //接受修改
+
         // 1.获取提交的数据
-        $goods = $request->all();
+        $goods = $request->input();
+       
         // 2.根据id找到要修改的内容的商品
         $comm = Goods::find($did);
-        // dd($comm);
+        
         // 3.  将商品属性改成提交过来的值
         $res = $comm->update([
             'money'=>$goods['money'],
             'fileupload'=>$goods['fileupload'],
             'number'=>$goods['number'],
             'content'=>$goods['content'],
-            'gid'=>$goods['gid'],
             'depict'=>$goods['depict'],
             'gname'=>$goods['gname'],
-            'salecnt'=>$goods['salecnt']
+            'cid'=>$goods['cid']
             ]);
 
         //4.如果修改完成后,返回成功信息或失败信息

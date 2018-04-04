@@ -19,7 +19,7 @@
 <body>
         <!-- 顶部开始 -->
     <div class="container">
-        <div class="logo"><a href="./index.html">X-admin v2.0</a></div>
+        <div class="logo"><a href="/admin/index">后台管理</a></div>
         <div class="left_open">
             <i title="展开左侧栏" class="iconfont">&#xe699;</i>
         </div>
@@ -39,6 +39,7 @@
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
               <dd><a onclick="x_admin_show('个人信息','http://www.baidu.com')">个人信息</a></dd>
               <dd><a onclick="x_admin_show('切换帐号','http://www.baidu.com')">切换帐号</a></dd>
+{{--<!-- <<<<<<< HEAD -->--}}
               <dd><a href="{{ url('admin/logout') }}">退出</a></dd>
             </dl>
           </li>
@@ -49,7 +50,7 @@
     <!-- 顶部结束 -->
     <!-- 中部开始 -->
      <!-- 左侧菜单开始 -->
-    <div class="left-nav">
+     <div class="left-nav">
       <div id="side-nav">
         <ul id="nav">
             <li>
@@ -82,35 +83,39 @@
                     </li >
                 </ul>
             </li>
+             <li>
+                <a href="javascript:;">
+                    <i class="iconfont">&#xe723;</i>
+                    <cite>分类管理</cite>
+                    <i class="iconfont nav_right">&#xe697;</i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a _href="cate/create">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>添加分类</cite>
+                        </a>
+                    </li >
+                    <li>
+                        <a _href="cate/index">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>分类列表</cite>
+                        </a>
+                    </li >
+                    
+                </ul>
+            </li>
             <li>
                 <a href="javascript:;">
                     <i class="iconfont">&#xe726;</i>
-                    <cite>商品页面</cite>
+                    <cite>商品管理</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
                 <ul class="sub-menu">
                     <li>
                         <a _href="{{ url('admin/goods') }}">
                             <i class="iconfont">&#xe6a7;</i>
-                            <cite>商品管理</cite>
-                        </a>
-                    </li >
-                    <li>
-                        <a _href="admin-role.html">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>管理</cite>
-                        </a>
-                    </li >
-                    <li>
-                        <a _href="admin-cate.html">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>分类</cite>
-                        </a>
-                    </li >
-                    <li>
-                        <a _href="admin-rule.html">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>管理</cite>
+                            <cite>商品详情</cite>
                         </a>
                     </li >
                 </ul>
@@ -185,7 +190,9 @@
           </ul>
           <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
+
                 <iframe src='{{ url('admin/info') }}' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
+
             </div>
           </div>
         </div>

@@ -15,8 +15,9 @@ class isLogin
      */
     public function handle($request, Closure $next)
     {
-        //后台登录中间件
-        if (session()->get('user')){
+
+        //如果已经登录
+        if(session()->get('user')){
             return $next($request);
         }else{
             return redirect('admin/login')->with('errors','远方的朋友,请先登录');

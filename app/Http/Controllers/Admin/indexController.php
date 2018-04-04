@@ -23,6 +23,6 @@ class indexController extends Controller
     {
         session()->forget('user');
 
-        return redirect('admin/login');
+        return redirect('admin/logout');
     }
 }
