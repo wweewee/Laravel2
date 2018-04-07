@@ -28,3 +28,4 @@ class IndexController extends Controller
         // dd($cates);
     }
 }
+ 

@@ -52,30 +52,29 @@
                         <div class="search-content">
                             <ul class="am-avg-sm-2 am-avg-md-3 am-avg-lg-4 boxes">
                                 @foreach($res as $v)
-                                
                                 <li>
-                                    <div class="i-pic limit">
-                                        <a href="details/{{$v ->did }}">
-                                            <img src="{{$v -> fileupload}}"/>
-                                        </a>
-                                        <p class="title fl">
-                                            {{$v -> gname}}
-                                        </p>
-                                        <p class="price fl">
-                                            <b>
-                                                ¥
-                                            </b>
-                                            <strong>
-                                                {{$v -> money}}
-                                            </strong>
-                                        </p>
-                                        <p class="number fl">
-                                            销量
-                                            <span>
-                                                {{$v -> salecnt}}
-                                            </span>
-                                        </p>
-                                    </div>
+                                    <a href="details/{{$v ->did }}">
+                                        <div class="i-pic limit"> 
+                                            <img src="{{$v->fileupload}}"/>
+                                            <p class="title fl">
+                                                {{$v -> gname}}
+                                            </p>
+                                            <p class="price fl">
+                                                <b>
+                                                    ¥
+                                                </b>
+                                                <strong>
+                                                    {{$v -> money}}
+                                                </strong>
+                                            </p>
+                                            <p class="number fl">
+                                                销量
+                                                <span>
+                                                    {{$v -> salecnt}}
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </a>
                                 </li>
                                 @endforeach
                             </ul>

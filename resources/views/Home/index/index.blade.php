@@ -71,11 +71,11 @@
                                                     <i>
                                                         <img src="/home/images/tea.png">
                                                     </i>
-                                                    <a class="ml-22" title="花茶" >
+                                                    <a class="ml-22" title="" href="/home/list/{{$v->id}}">
                                                        {{$v->name}}
                                                     </a>
                                                 </h3>
-                                                <em>
+                                                <em> 
                                                     &gt;
                                                 </em>
                                             </div>
@@ -88,7 +88,7 @@
                                                                 <dl class="dl-sort">
                                                                 @foreach($arr[$v->name] as $m=>$n)
                                                                     <dd>
-                                                                        <a title="" href="#" style="cursor:pointer;">
+                                                                        <a title="" href="/home/list/{{$n['id']}}" style="cursor:pointer;">
                                                                             <span>
                                                                             {{$n['name']}}
                                                                             </span>

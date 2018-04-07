@@ -47,7 +47,7 @@ Route::group(['prefix'=>'home','namespace'=>'Home'/*, 'middleware'=>'islogin' */
     // 首页
     Route::get('index','IndexController@index');
     // 商品分类
-    Route::get('list','GoodsController@list');
+    Route::get('list/{id}','GoodsController@list');
     // 详情表
     Route::get('details/{id}','GoodsController@details');
 });
