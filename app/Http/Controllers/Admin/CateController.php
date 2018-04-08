@@ -11,6 +11,7 @@ class CateController extends Controller
     //
     public function create()
     {
+        //获取一级分类
         $cateone = Cate::where('pid', 0)->get();
         //返回一个分类添加页面
 
@@ -27,8 +28,8 @@ class CateController extends Controller
 //        实例化分类对象
 
         $cate = new Cate();
-        $cates = $cate->getCate();
-//        $cates = Cate::all();
+//        $cates = $cate->getCate();
+        $cates = Cate::all();
 //        $cates = DB::table('data_category')->get();
 //        $cates = DB::table('data_category')->get();
 //        dd($cates);
@@ -43,7 +44,7 @@ class CateController extends Controller
         //1 获取请求参数数据
         $input = $request->except('_token');
 //        dd($input);
-        //添加操作
+        //将数据添加到数据库
         $res = Cate::create($input);
 
         if ($res) {

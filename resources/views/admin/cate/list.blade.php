@@ -45,9 +45,9 @@
             </th>  
             <th> 父类ID </th>
             <th> ID </th>
-            <th> 分类商品名称 </th>
-            <th> 商品关键词 </th>
-            <th>操作</th>
+            <th> 商品分类</th>
+            <th> 商品 </th>
+            <th> 操作</th>
         </thead>
         <tbody>
         @foreach($cates as $k=>$v)
@@ -59,12 +59,11 @@
                     {{$v->pid}}
                   </td>
                   <td >{{ $v->id }}</td>
-                  <td >{{ $v->names }}</td>
+                  <td >{{ $v->name }}</td>
                   <td >{{ $v->describe }}</td>
                   <td>
                   <a class="layui-btn layui-btn-normal" href="{{ url('admin/cate/'.$v->id.'/edit') }}">修改</a>
                   <a class="layui-btn layui-btn-danger" href="javascript:;" onclick="del({{ $v->id }})">删除</a>
-
                   </td>
                 </tr>
                 @endforeach
@@ -129,10 +128,6 @@
 
             });
         }
-
-
-
-     
     </script>
    
   </body>

@@ -20,13 +20,12 @@ class GoodsController extends Controller
         }
         
         // dd($cate);
-        return view('Home.goods.list', compact('res'));
+        return view('home.goods.list', compact('res'));
     }
 
     // 商品详情
     public function details($id)
-    {   
-
+    {
         $data = Goods::where('did',$id)->get();
         
         return view('home.goods.introduction',compact('data'));

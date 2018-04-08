@@ -29,12 +29,14 @@
                 <!--轮播 -->
                 <div class="am-slider am-slider-default scoll" data-am-flexslider id="demo-slider-0">
                     <ul class="am-slides">
-                        <li class="banner1">
+                    @foreach($res as $v)
+                        <li class="banner3">
                             <a href="introduction.html">
-                                <img src="/home/images/ad1.jpg" />
+                                <img src="/uploads/{{ $v->img }}" />
                             </a>
                         </li>
-                        <li class="banner2">
+                    @endforeach
+                        <!-- <li class="banner2">
                             <a>
                                 <img src="/home/images/ad2.jpg" />
                             </a>
@@ -48,7 +50,7 @@
                             <a>
                                 <img src="/home/images/ad4.jpg" />
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
                 <div class="clear">
@@ -449,39 +451,27 @@
                     </div>
                     <div class="clear ">
                     </div>
+                    @foreach($cate_one as $v)
                     <div id="f1">
                         <!--甜点-->
                         <div class="am-container ">
                             <div class="shopTitle ">
                                 <h4>
-                                    甜品
+                                {{$v->name}}
                                 </h4>
                                 <h3>
-                                    每一道甜品都有一个故事
+                                    每一道甜品都有一个故事每一道甜品都有一个故事
                                 </h3>
                                 <div class="today-brands ">
-                                    <a href="# ">
-                                        桂花糕
+                                @foreach($arr[$v->name] as $m=>$n)
+                                    <a href="#">
+                                    {{$n['name']}}
                                     </a>
-                                    <a href="# ">
-                                        奶皮酥
-                                    </a>
-                                    <a href="# ">
-                                        栗子糕
-                                    </a>
-                                    <a href="# ">
-                                        马卡龙
-                                    </a>
-                                    <a href="# ">
-                                        铜锣烧
-                                    </a>
-                                    <a href="# ">
-                                        豌豆黄
-                                    </a>
+                                @endforeach    
                                 </div>
                                 <span class="more ">
-                                    <a href="# ">
-                                        更多美味
+                                    <a href="#">
+                                        更多
                                         <i class="am-icon-angle-right" style="padding-left:10px ;">
                                         </i>
                                     </a>
@@ -491,48 +481,15 @@
                         <div class="am-g am-g-fixed floodFour">
                             <div class="am-u-sm-5 am-u-md-4 text-one list ">
                                 <div class="word">
-                                    <a class="outer" href="#">
+                                @foreach($arr[$v->name] as $m=>$n)
+                                    <a class="outer" href="/home/list/{{$n['id']}}">
                                         <span class="inner">
                                             <b class="text">
-                                                核桃
+                                            {{$n['name']}}
                                             </b>
                                         </span>
                                     </a>
-                                    <a class="outer" href="#">
-                                        <span class="inner">
-                                            <b class="text">
-                                                核桃
-                                            </b>
-                                        </span>
-                                    </a>
-                                    <a class="outer" href="#">
-                                        <span class="inner">
-                                            <b class="text">
-                                                核桃
-                                            </b>
-                                        </span>
-                                    </a>
-                                    <a class="outer" href="#">
-                                        <span class="inner">
-                                            <b class="text">
-                                                核桃
-                                            </b>
-                                        </span>
-                                    </a>
-                                    <a class="outer" href="#">
-                                        <span class="inner">
-                                            <b class="text">
-                                                核桃
-                                            </b>
-                                        </span>
-                                    </a>
-                                    <a class="outer" href="#">
-                                        <span class="inner">
-                                            <b class="text">
-                                                核桃
-                                            </b>
-                                        </span>
-                                    </a>
+                                @endforeach    
                                 </div>
                                 <a href="# ">
                                     <div class="outer-con ">
@@ -642,6 +599,7 @@
                         <div class="clear ">
                         </div>
                     </div>
+                    @endforeach
                     <div class="clear ">
                     </div>
                 </div>

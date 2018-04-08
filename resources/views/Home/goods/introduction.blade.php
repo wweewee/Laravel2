@@ -84,12 +84,12 @@
 							</script>
 
 							<div class="tb-booth tb-pic tb-s310">
-								<a href="/home/images/01.jpg"><img src="/home/images/01_mid.jpg" alt="细节展示放大镜特效" rel="/home/images/01.jpg" class="jqzoom" /></a>
+								<a href="{{ $v->fileupload }}"><img src="{{ $v->fileupload }}" style="width:100%;height:100%" alt="细节展示放大镜特效" rel="{{ $v->fileupload }}" class="jqzoom" /></a>
 							</div>
 							<ul class="tb-thumb" id="thumblist">
 								<li class="tb-selected">
 									<div class="tb-pic tb-s40">
-										<a href="#"><img src="/home/images/01_small.jpg" mid="/home/images/01_mid.jpg" big="/home/images/01.jpg"></a>
+										<a href="#"><img src="{{ $v->fileupload }}" mid="/home/images/01_mid.jpg" big="{{ $v->fileupload }}"></a>
 									</div>
 								</li>
 								<li>

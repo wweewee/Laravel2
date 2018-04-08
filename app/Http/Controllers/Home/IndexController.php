@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Home;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Admin\Cate;
+use App\Model\Admin\Show;
 
 class IndexController extends Controller
 {
@@ -23,9 +24,15 @@ class IndexController extends Controller
             
             $arr[$v->name] = $two1;
         }
-        
-        return view('home.index.index', compact('cate_one','arr'));
+        $res = Show::get();
+        return view('home.index.index', compact('cate_one','arr','res'));
         // dd($cates);
     }
+    // public function rotation()
+    // {
+        
+    //     dd($res);
+    //     // return view('home.index.index', compact('res'));
+    // }
 }
  

@@ -24,7 +24,7 @@
   <div class="x-body">
     <form class="layui-form" action="{{ url('admin/cate/store') }}" method="post">
         <div class="layui-form-item">
-            <label class="layui-form-label">父级分类</label>
+            <label class="layui-form-label">一级分类</label>
             {{ csrf_field() }}
             <div class="layui-input-block">
                 <select name="pid" id="catid" lay-verify="required">
@@ -36,7 +36,7 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">分类名称</label>
+            <label class="layui-form-label">二级分类</label>
             <div class="layui-input-block">
                 <input type="text" name="name" required  lay-verify="required" placeholder="请输入名称" autocomplete="off" class="layui-input">
             </div>

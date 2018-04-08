@@ -26,24 +26,22 @@ class Cate extends Model
 //  获取格式化后的分类数据
 
 
-    public static function Cate($category)
+    public static function Cates($category)
     {
         //1 定义一个空数组，存放格式化后的分类数据
         $arr = [];
-
         //2 对分类数据进行排序(先遍历获取一级类，在获取某个一级类时接着或者这个一级类下的二级类)
 //        dd($category);
-
         foreach ($category as $k=>$v){
-            //        2.1 获取一级类
+            //2.1 获取一级类
             if($v->pid == 0){
                 $v['names'] = $v['name'];
                 $arr[] = $v;
 
-                foreach ($category as $m=>$n){
+                foreach ($category as $m => $n){
                     //2.2 获取当前一级类下的二级类
                     if($n->pid == $v->id){
-                        $n['names'] = '|----'.$n['name'];
+                        $n['name'] = '|----'.$n['name'];
                         $arr[] = $n;
                     }
                 }

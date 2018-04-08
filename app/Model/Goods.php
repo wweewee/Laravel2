@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Goods extends Model
 {
+    //
     //1.模型的关联表
     public $table = 'admin_commodity';
     //2.模型的默认主键

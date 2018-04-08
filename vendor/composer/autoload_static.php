@@ -315,7 +315,12 @@ class ComposerStaticInita8841260d5e0219c2737a65490948a77
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+
+        'App\\Http\\Controllers\\Admin\\codeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/codeController.php',
         'App\\Http\\Controllers\\Admin\\indexController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/indexController.php',
+        'App\\Http\\Controllers\\Admin\\loginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/loginController.php',
+//
+
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
@@ -329,6 +334,9 @@ class ComposerStaticInita8841260d5e0219c2737a65490948a77
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+
+        'App\\Model\\User' => __DIR__ . '/../..' . '/app/Model/User.php',
+        'App\\Org\\code\\Code' => __DIR__ . '/../..' . '/app/Org/code/Code.class.php',
         'App\\Http\\Middleware\\isLogin' => __DIR__ . '/../..' . '/app/Http/Middleware/isLogin.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
