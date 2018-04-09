@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Admin\Cate;
 use App\Model\Admin\Show;
-
+use App\Model\Admin\Huo;
 class IndexController extends Controller
 {
 
@@ -25,14 +25,8 @@ class IndexController extends Controller
             $arr[$v->name] = $two1;
         }
         $res = Show::get();
-        return view('home.index.index', compact('cate_one','arr','res'));
-        // dd($cates);
+        $activity = Huo::get();
+        return view('home.index.index', compact('cate_one','arr','res','activity'));
     }
-    // public function rotation()
-    // {
-        
-    //     dd($res);
-    //     // return view('home.index.index', compact('res'));
-    // }
 }
  

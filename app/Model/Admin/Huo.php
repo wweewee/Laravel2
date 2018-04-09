@@ -4,10 +4,10 @@ namespace App\Model\Admin;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Show extends Model
+class Huo extends Model
 {
-    public $table = 'rotation';
+    public $table = 'admin_activity';
     public $primaryKey = "id";
-    public $guarded=[];
     public $timestamps = false;
+    public $guarded=[];
 }

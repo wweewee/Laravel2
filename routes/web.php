@@ -63,7 +63,18 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>'isLogin'],fu
     Route::post('cate/changeorder','CateController@changeOrder');
     Route::get('cate/{id}/edit','CateController@edit');
     Route::post('cate/update','CateController@update');
-    Route::get('cate/{id}','CateController@del');
+	Route::get('cate/{id}','CateController@del');
+	//活动
+	Route::get('activity/index','HuoController@index'); //页面
+	Route::get('activity/add','HuoController@add'); //添加页面
+	Route::post('activity/insert','HuoController@insert'); //添加
+	Route::post('activity/delete/{id}','HuoController@delete');//删除
+	Route::get('activity/edit/{id}','HuoController@edit');  //修改页面
+	Route::post('activity/update','HuoController@update'); //修改
+	Route::post('activity/changeorder','HuoController@changeorder'); //排序
+	Route::post('activity/update','HuoController@update'); //修改广告位
+	// 图片上传
+	Route::post('file/upload','FileController@upload');
 });
 
 // 前台部分================================

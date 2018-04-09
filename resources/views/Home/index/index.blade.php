@@ -383,23 +383,25 @@
                             </span>
                         </div>
                         <div class="am-g am-g-fixed ">
-                            <div class="am-u-sm-3 ">
+                            @foreach($activity as $v)
+                            <div class="am-u-sm-3">
                                 <div class="icon-sale one ">
                                 </div>
                                 <h4>
                                     秒杀
                                 </h4>
                                 <div class="activityMain ">
-                                    <img src="/home/images/activity1.jpg ">
+                                <img src="/uploads/{{ $v->img }}" style="height:200px;">
                                     </img>
                                 </div>
                                 <div class="info ">
                                     <h3>
-                                        春节送礼优选
+                                    {{ $v->name }}
                                     </h3>
                                 </div>
                             </div>
-                            <div class="am-u-sm-3 ">
+                            @endforeach
+                            <!-- <div class="am-u-sm-3 ">
                                 <div class="icon-sale two ">
                                 </div>
                                 <h4>
@@ -446,7 +448,7 @@
                                         春节送礼优选
                                     </h3>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="clear ">

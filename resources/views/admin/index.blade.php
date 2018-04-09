@@ -85,7 +85,7 @@
             </li>
              <li>
                 <a href="javascript:;">
-                    <i class="iconfont">&#xe723;</i>
+                    <i class="iconfont layui-icon">&#xe62a;</i>
                     <cite>分类管理</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
@@ -122,7 +122,7 @@
             </li>
             <li>
                 <a href="javascript:;">
-                    <i class="iconfont">&#xe726;</i>
+                    <i class="iconfont layui-icon">&#xe634;</i>
                     <cite>轮播图</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
@@ -131,6 +131,21 @@
                         <a _href="{{ url('admin/show/index') }}">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>轮播图管理</cite>
+                        </a>
+                    </li >
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <i class="iconfont layui-icon">&#xe650;</i>
+                    <cite>活动管理</cite>
+                    <i class="iconfont nav_right">&#xe697;</i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a _href="{{ url('admin/activity/index') }}">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>活动管理</cite>
                         </a>
                     </li >
                 </ul>
