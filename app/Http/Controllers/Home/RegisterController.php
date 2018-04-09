@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Model\Register;
 use Illuminate\Support\Facades\Validator;
 use Mail;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Crypt;
 
 
 class RegisterController extends Controller
@@ -49,17 +51,13 @@ class RegisterController extends Controller
             return redirect('home/register')->with('errors','两次密码不一致');
         }
         // 表单数据存入数据库中
-//        $register = new Register();
-//        $register->email =  $input['email'];
-//        $register->password =  $input['password'];
-//        $res = $register->save();
+        $user = Register::create([
+            'email'=>$input['email'],
+            'password'=>$input['password'],
+            'token'=>$token]);
 
-        $user = Register::create(['email'=>$input['email'],'password'=>$input['password'],'token'=>$token]);
-//       $user = compact($res);
-//        dd($user);
         //成功后怎么怎么样 失败怎么怎么样
         if($user){
-
             $res = Mail::send('email.active',['user'=>$user],function ($m) use ($user){
                 //通过什么邮箱服务器发送的
 //                $m->from('hello@app.com','Your Application');

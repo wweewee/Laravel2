@@ -32,6 +32,14 @@ Route::get('/home/introduction','Home\IntroductionController@index');
 Route::get('/home/shopcart/{did}','Home\ShopcartController@shopcart');
 // 删除购物车中的商品
 Route::get('/home/del/{did}','Home\ShopcartController@del');
+//个人中心
+Route::get('/home/information','Home\InformationController@inform');
+//完善个人信息
+Route::post('/home/infor','Home\InformationController@user_inform');
+//修改密码页面
+Route::get('/home/password/{email}','Home\InformationController@password');
+//修改密码
+Route::post('/home/dopass','Home\InformationController@dopass');
 
 
 

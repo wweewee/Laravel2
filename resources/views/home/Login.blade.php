@@ -21,28 +21,30 @@
 </div>
 
 <div class="login-banner">
+
 	<div class="login-main">
 		<div class="login-banner-bg"><span></span><img src="/home/images/big.jpg" /></div>
 		<div class="login-box">
-			@if (count($errors) > 0)
-				<div class="alert alert-danger">
-					<ul>
-						@if(is_object($errors))
-							@foreach ($errors->all() as $error)
-								<li>{{ $error }}</li>
-							@endforeach
-						@else
-							<li>{{ $errors }}</li>
-						@endif
-					</ul>
-				</div>
-			@endif
+
 			<h3 class="title">登录商城</h3>
 
 			<div class="clear"></div>
 
 			<div class="login-form">
 				<form action="{{ url('/home/Login') }}" method="post">
+					@if (count($errors) > 0)
+						<div class="alert alert-danger">
+							<ul>
+								@if(is_object($errors))
+									@foreach ($errors->all() as $error)
+										<li>{{ $error }}</li>
+									@endforeach
+								@else
+									<li>{{ $errors }}</li>
+								@endif
+							</ul>
+						</div>
+					@endif
 					{{ csrf_field() }}
 					<div class="user-name">
 						<label for="user"><i class="am-icon-user"></i></label>

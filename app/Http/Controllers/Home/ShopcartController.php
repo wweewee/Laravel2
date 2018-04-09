@@ -5,15 +5,14 @@ namespace App\Http\Controllers\Home;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\ShopCart;
-use session;
+use Session;
 
 class ShopcartController extends Controller
 {
     //显示购物页
-
-
     public function shopcart(Request $request,$did)
     {
+
        $good = ShopCart::find($did);
 //        dd($good);
         if(session('cart')){
@@ -24,7 +23,7 @@ class ShopcartController extends Controller
             session()->put('cart',$cart);
 
         }else{
-            $cart = [];
+//            $cart = [];
             $cart[$did]= $good;
             session()->put('cart',$cart);
         }
@@ -32,10 +31,12 @@ class ShopcartController extends Controller
 
 
     }
-
-
-    public function del($did)
+    public function del(Request $request,$did)
     {   //删除购物车指定商品
+        if( empty(Session('user')))
+        {
+            return redirect('/home/Login');
+        }
 //        $res = ShopCart::destroy($did);
 //        session()->forget('cart');
         $cart = session('cart');

@@ -30,11 +30,11 @@ class LoginController extends Controller
             ->where('email',$input['email'])
             ->first();
 //    dd($user);
-        session()->put('user',$user);
 
         if(!$user){
             return redirect('home/Login')->with('errors','用户名不存在');
         }
+
 
 
         //判断密码是否正确
@@ -47,23 +47,12 @@ class LoginController extends Controller
         if($user->active !=1){
             return redirect('home/Login')->with('errors','邮箱未激活');
         }else{
+            Session::put('user',$user);
             return redirect('home/index');
         }
 
     }
 
-
-
-
-
-
-
-//    public function jiami()
-//    {
-//        $str = '123456';
-//        $str_md5 = md5($str);
-//        return $str_md5;
-//    }
 
 
     }
