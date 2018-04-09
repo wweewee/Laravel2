@@ -10,7 +10,7 @@ use Session;
 class ShopcartController extends Controller
 {
     //显示购物页
-    public function shopcart(Request $request,$did)
+    public function shopcart($did)
     {
 
        $good = ShopCart::find($did);
@@ -19,14 +19,15 @@ class ShopcartController extends Controller
 
             $cart = session('cart');
             $cart[$did]= $good;
-//            dd($cart);
-            session()->put('cart',$cart);
+
+//             session()->put('cart',$cart);
 
         }else{
-//            $cart = [];
+            $cart = [];
             $cart[$did]= $good;
             session()->put('cart',$cart);
         }
+
         return view('home.shopcart',compact('cart'));
 
 
@@ -40,13 +41,13 @@ class ShopcartController extends Controller
 //        $res = ShopCart::destroy($did);
 //        session()->forget('cart');
         $cart = session('cart');
-
+//    dd($cart);
         unset($cart[$did]);
 
-        session()->put('cart',$cart);
+       session()->put('cart',$cart);
 
         $res = session('cart');
-//      dd($res);
+//     dd($res);
 //         判断删除是否成功
         if($res)
         {

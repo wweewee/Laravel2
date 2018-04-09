@@ -97,12 +97,7 @@
 							<div class="bundle-main">
 								@foreach($cart as $v)
 								<ul class="item-content clearfix">
-									<li class="td td-chk">
-										<div class="cart-checkbox ">
-											<input class="check" id="J_CheckBox_170037950254" name="items[]" value="170037950254" type="checkbox">
-											<label for="J_CheckBox_170037950254"></label>
-										</div>
-									</li>
+
 									<li class="td td-item">
 										<div class="item-pic">
 											<a href="#" target="_blank" class="J_MakePoint" data-point="tbcart.8.12">
@@ -184,13 +179,11 @@
 				<div class="float-bar-wrapper">
 					<div id="J_SelectAll2" class="select-all J_SelectAll">
 						<div class="cart-checkbox">
-							<input class="check-all check" id="J_SelectAllCbx2" name="select-all" value="true" type="checkbox">
-							<label for="J_SelectAllCbx2"></label>
+
 						</div>
-						<span>全选</span>
+
 					</div>
 					<div class="operations">
-						<a href="#" hidefocus="true" class="deleteAll">删除</a>
 
 					</div>
 					<div class="float-bar-right">
@@ -202,10 +195,7 @@
 								<span class="arrow"></span>
 							</div>
 						</div>
-						<div class="price-sum">
-							<span class="txt">合计:</span>
-							<strong class="price">¥<em id="J_Total"></em></strong>
-						</div>
+
 						<div class="btn-area">
 							<a href="" id="J_Go" class="submit-btn submit-btn-disabled" aria-label="请注意如果没有选择宝贝，将无法结算">
 								<span>结&nbsp;算</span></a>
@@ -251,33 +241,7 @@
 			<li class="active"><a href="shopcart.html"><i class="am-icon-shopping-basket"></i>购物车</a></li>	
 			<li><a href="../person/index.html"><i class="am-icon-user"></i>我的</a></li>					
 		</div>
-		<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
-		<script>
-            $(function(){
-                $("#add").click(function(){
-                    var t=$(this).parent().find('input[class*=text_box]');
-                    t.val(parseInt(t.val())+1)
-                    setTotal();
-                })
-                $("#min").click(function(){
-                    var t=$(this).parent().find('input[class*=text_box]');
-                    t.val(parseInt(t.val())-1)
-                    if(parseInt(t.val())<0){
-                        t.val(0);
-                    }
-                    setTotal();
-                })
-                function setTotal(){
-                    var s=0;
-                    $("#tab td").each(function(){
-                        s+=parseInt($(this).find('input[class*=text_box]').val())*parseFloat($(this).find('span[class*=price]').text());
-                    });
-                    $("#total").html(s.toFixed(2));
-                }
-                setTotal();
 
-            })
-		</script>
 	</body>
 
 </html>

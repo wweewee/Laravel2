@@ -13,10 +13,11 @@ class IntroductionController extends Controller
     public function index()
     {
 
-       $cart = ShopCart::find(31);
-//      dd($cart);
 
-       return view('home.introduction',compact('cart'));
+       $cart = ShopCart::find(33);
+//     dd($cart);
+
+     return view('/home/introduction',compact('cart'));
     }
 
 

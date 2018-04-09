@@ -44,7 +44,7 @@ class LoginController extends Controller
         }
 
         //判断账号是否激活
-        if($user->active !=1){
+        if($user->status !=1){
             return redirect('home/Login')->with('errors','邮箱未激活');
         }else{
             Session::put('user',$user);
