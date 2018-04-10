@@ -40,6 +40,8 @@ Route::post('/home/infor','Home\InformationController@user_inform');
 Route::get('/home/password/{email}','Home\InformationController@password');
 //修改密码
 Route::post('/home/dopass','Home\InformationController@dopass');
+//提交订单
+Route::get('/home/reorder','Home\Jiecontroller@reorder');
 
 
 
