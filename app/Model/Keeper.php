@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Model\Admin;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Users extends Model
+class Keeper extends Model
 {
-    //
     //1.模型的关联表
     public $table = 'loginadmin';
     //2.模型的默认主键

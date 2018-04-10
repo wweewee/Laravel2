@@ -57,6 +57,7 @@ class loginController extends Controller
     {
     	//1.获取用户数据  除去{{cdrf_field() }}都获取
     	$input = $request->except('_token');
+//    	dd($input);
     	//2.对提交的数据进行验证
     	$rule = [
     		'username' => 'required|between:4,10',
@@ -84,11 +85,14 @@ class loginController extends Controller
     	}
     	//4.判断是否有此用户
     	$user = Users::where('username',$input['username'])->first();
+//    	dd(Crypt::decrypt($user->password));
     	//5.判断密码是否正确
-    	if($input['password'] !=Crypt::decrypt($user->password)){
+//dd(123);
+    	if($input['password'] != Crypt::decrypt($user->password)){
+
     		return redirect('admin/login')->with('errors','密码错误');
     	}
-    	// 6.保存用户到ssssion中(session的操作)
+    	//6.保存用户到ssssion中(session的操作)
     	Session::put('user',$user);
     	session()->get('user')->usrname;
     	// 7.如果都正确,跳转到首页

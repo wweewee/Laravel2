@@ -1,9 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <title>后台主页-X-admin2.0</title>
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -14,9 +16,9 @@
     <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="/admin/lib/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="/admin/js/xadmin.js"></script>
-
 </head>
 <body>
+
 <!-- 顶部开始 -->
 <div class="container">
     <div class="logo"><a href="/admin/index">后台管理</a></div>
@@ -45,7 +47,6 @@
         </li>
         <li class="layui-nav-item to-index"><a href="/home/index">前台首页</a></li>
     </ul>
-
 </div>
 <!-- 顶部结束 -->
 <!-- 中部开始 -->
@@ -76,7 +77,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="order-list.html">
+                        <a _href="{{ url('admin/order') }}">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>订单列表</cite>
                         </a>
@@ -91,7 +92,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="cate/create">
+                        <a _href="{{ url('admin/keeper') }}">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>添加分类</cite>
                         </a>
@@ -102,7 +103,27 @@
                             <cite>分类列表</cite>
                         </a>
                     </li >
-
+                </ul>
+            </li>
+            <li>
+                <a _href="{{ url('admin/permission') }}">
+                    <i class="iconfont">&#xe726;</i>
+                    <cite>权限管理</cite>
+                    <i class="iconfont nav_right">&#xe697;</i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a _href="{{ url('admin/permission/create') }}">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>添加权限</cite>
+                        </a>
+                    </li>
+                    <li>
+                        <a _href="{{ url('admin/permission') }}">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>权限管理</cite>
+                        </a>
+                    </li >
                 </ul>
             </li>
             <li>
@@ -152,57 +173,21 @@
             </li>
             <li>
                 <a href="javascript:;">
-                    <i class="iconfont">&#xe6ce;</i>
-                    <cite>系统统计</cite>
+                    <i class="iconfont">&#xe723;</i>
+                    <cite>角色管理</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="echarts1.html">
+                        <a _href="{{ url('admin/role/create') }}">
                             <i class="iconfont">&#xe6a7;</i>
-                            <cite>拆线图</cite>
+                            <cite>添加角色</cite>
                         </a>
                     </li >
                     <li>
-                        <a _href="echarts2.html">
+                        <a _href="{{ url('admin/role') }}">
                             <i class="iconfont">&#xe6a7;</i>
-                            <cite>柱状图</cite>
-                        </a>
-                    </li>
-                    <li>
-                        <a _href="echarts3.html">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>地图</cite>
-                        </a>
-                    </li>
-                    <li>
-                        <a _href="echarts4.html">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>饼图</cite>
-                        </a>
-                    </li>
-                    <li>
-                        <a _href="echarts5.html">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>雷达图</cite>
-                        </a>
-                    </li>
-                    <li>
-                        <a _href="echarts6.html">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>k线图</cite>
-                        </a>
-                    </li>
-                    <li>
-                        <a _href="echarts7.html">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>热力图</cite>
-                        </a>
-                    </li>
-                    <li>
-                        <a _href="echarts8.html">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>仪表图</cite>
+                            <cite>角色列表</cite>
                         </a>
                     </li>
                 </ul>
@@ -220,9 +205,7 @@
         </ul>
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
-
                 <iframe src='{{ url('admin/info') }}' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
-
             </div>
         </div>
     </div>

@@ -17,7 +17,7 @@
             </ul>
         </div>
     @endif
-        <div class="message">x-admin2.0-管理登录</div>  
+        <div class="message">货希后台登录</div>
         <div id="darkbannerwrap"></div>
 
         <form method="post" class="layui-form" action="{{ url('admin/dologin') }}">
