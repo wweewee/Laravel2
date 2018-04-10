@@ -23,7 +23,6 @@ Route::get('/active','Home\RegisterController@active');
 //登录
 Route::get('/home/Login','Home\LoginController@index');
 Route::post('/home/Login','Home\LoginController@doLogin');
-
 //主页
 Route::get('/home/index','Home\IndexController@index');
 //商品详情页
