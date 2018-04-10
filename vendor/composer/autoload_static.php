@@ -316,24 +316,40 @@ class ComposerStaticInita8841260d5e0219c2737a65490948a77
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Admin\\indexController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/indexController.php',
+        'App\\Http\\Controllers\\Admin\\codeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/codeController.php',
+        'App\\Http\\Controllers\\Admin\\indexController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/indexController.php',
+        'App\\Http\\Controllers\\Admin\\loginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/loginController.php',
+
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\Home\\IndexController' => __DIR__ . '/../..' . '/app/Http/Controllers/Home/IndexController.php',
+
         'App\\Http\\Controllers\\Home\\IntroductionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Home/IntroductionController.php',
         'App\\Http\\Controllers\\Home\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Home/LoginController.php',
         'App\\Http\\Controllers\\Home\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Home/RegisterController.php',
         'App\\Http\\Controllers\\Home\\ShopcartController' => __DIR__ . '/../..' . '/app/Http/Controllers/Home/ShopcartController.php',
+
+        'App\\Http\\Controllers\\Home\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Home/UserController.php',
+
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+
         'App\\Http\\Middleware\\isLogin' => __DIR__ . '/../..' . '/app/Http/Middleware/isLogin.php',
         'App\\Model\\Register' => __DIR__ . '/../..' . '/app/Model/Register.php',
+
+        'App\\Model\\User' => __DIR__ . '/../..' . '/app/Model/User.php',
+        'App\\Org\\code\\Code' => __DIR__ . '/../..' . '/app/Org/code/Code.class.php',
+
+        'App\\Http\\Middleware\\isLogin' => __DIR__ . '/../..' . '/app/Http/Middleware/isLogin.php',
+
+
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',

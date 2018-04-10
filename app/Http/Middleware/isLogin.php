@@ -15,10 +15,13 @@ class isLogin
      */
     public function handle($request, Closure $next)
     {
-        if(session()->get('home_user_register')){
+
+
+        //如果已经登录
+        if(session()->get('user')){
             return $next($request);
         }else{
-            return redirect('home/Login')->with('errors','注册去');
+            return redirect('admin/login')->with('errors','远方的朋友,请先登录');
         }
 
     }
