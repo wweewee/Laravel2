@@ -14,7 +14,7 @@ class IntroductionController extends Controller
     {
 
 
-       $cart = ShopCart::find(33);
+       $cart = ShopCart::find(35);
 //     dd($cart);
 
      return view('/home/introduction',compact('cart'));

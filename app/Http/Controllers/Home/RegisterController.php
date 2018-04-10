@@ -7,8 +7,6 @@ use App\Http\Controllers\Controller;
 use App\Model\Register;
 use Illuminate\Support\Facades\Validator;
 use Mail;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Crypt;
 
 
 class RegisterController extends Controller
@@ -88,7 +86,7 @@ class RegisterController extends Controller
         }
 
         //2. 激活用户
-        $res = $user->update(['active'=>1]);
+        $res = $user->update(['status'=>1]);
         if($res){
             return redirect('home/Login');
         }else{

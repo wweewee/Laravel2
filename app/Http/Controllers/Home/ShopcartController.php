@@ -20,7 +20,7 @@ class ShopcartController extends Controller
             $cart = session('cart');
             $cart[$did]= $good;
 
-//             session()->put('cart',$cart);
+           session()->put('cart',$cart);
 
         }else{
             $cart = [];
