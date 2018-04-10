@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Org\code\Code;
 use Session;
-use App\Model\User;
+use App\Model\Admin\Users;
 
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Crypt;
@@ -46,7 +46,7 @@ class loginController extends Controller
         // 获取验证码的内容
         $phrase = $builder->getPhrase();
         // 把内容存入session
-        \Session::flash('code', $phrase);
+        Session::flash('code', $phrase);
         // 生成图片
         header("Cache-Control: no-cache, must-revalidate");
         header("Content-Type:image/jpeg");
@@ -83,7 +83,7 @@ class loginController extends Controller
     		return redirect('admin/login')->with('errors','验证码错误');
     	}
     	//4.判断是否有此用户
-    	$user = User::where('username',$input['username'])->first();
+    	$user = Users::where('username',$input['username'])->first();
     	//5.判断密码是否正确
     	if($input['password'] !=Crypt::decrypt($user->password)){
     		return redirect('admin/login')->with('errors','密码错误');
