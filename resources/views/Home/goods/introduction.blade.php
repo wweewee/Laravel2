@@ -24,8 +24,6 @@
 	</head>
 
 	<body>
-
-
 			@include('home.inherit.header')
             <b class="line"></b>
 			<div class="listMain">
@@ -69,7 +67,7 @@
 				</div>
 
 				<!--放大镜-->
-
+				@foreach($data as $v)
 				<div class="item-inform">
 					<div class="clearfixLeft" id="clearcontent">
 
@@ -86,12 +84,12 @@
 							</script>
 
 							<div class="tb-booth tb-pic tb-s310">
-								<a href="/home/images/01.jpg"><img src="/home/images/01_mid.jpg" alt="细节展示放大镜特效" rel="/home/images/01.jpg" class="jqzoom" /></a>
+								<a href="{{ $v->fileupload }}"><img src="{{ $v->fileupload }}" style="width:100%;height:100%" alt="细节展示放大镜特效" rel="{{ $v->fileupload }}" class="jqzoom" /></a>
 							</div>
 							<ul class="tb-thumb" id="thumblist">
 								<li class="tb-selected">
 									<div class="tb-pic tb-s40">
-										<a href="#"><img src="/home/images/01_small.jpg" mid="/home/images/01_mid.jpg" big="/home/images/01.jpg"></a>
+										<a href="#"><img src="{{ $v->fileupload }}" mid="/home/images/01_mid.jpg" big="{{ $v->fileupload }}"></a>
 									</div>
 								</li>
 								<li>
@@ -115,21 +113,18 @@
 						<!--规格属性-->
 						<!--名称-->
 						<div class="tb-detail-hd">
-							<h1>	
-				 良品铺子 手剥松子218g 坚果炒货 巴西松子
-	          </h1>
+							<h1>
+							{{$v -> gname}}
+						</h1>
 						</div>
 						<div class="tb-detail-list">
 							<!--价格-->
 							<div class="tb-detail-price">
 								<li class="price iteminfo_price">
 									<dt>促销价</dt>
-									<dd><em>¥</em><b class="sys_item_price">56.90</b>  </dd>                                 
+									<dd><em>¥</em><b class="sys_item_price">{{$v -> money}}</b>  </dd>
 								</li>
-								<li class="price iteminfo_mktprice">
-									<dt>原价</dt>
-									<dd><em>¥</em><b class="sys_item_mktprice">98.00</b></dd>									
-								</li>
+
 								<div class="clear"></div>
 							</div>
 
@@ -164,7 +159,7 @@
 									<div class="tm-indcon"><span class="tm-label">月销量</span><span class="tm-count">1015</span></div>
 								</li>
 								<li class="tm-ind-item tm-ind-sumCount canClick">
-									<div class="tm-indcon"><span class="tm-label">累计销量</span><span class="tm-count">6015</span></div>
+									<div class="tm-indcon"><span class="tm-label">累计销量</span><span class="tm-count">{{$v->salecnt}}</span></div>
 								</li>
 								<li class="tm-ind-item tm-ind-reviewCount canClick tm-line3">
 									<div class="tm-indcon"><span class="tm-label">累计评价</span><span class="tm-count">640</span></div>
@@ -213,9 +208,8 @@
 															<input id="min" class="am-btn am-btn-default" name="" type="button" value="-" />
 															<input id="text_box" name="" type="text" value="1" style="width:30px;" />
 															<input id="add" class="am-btn am-btn-default" name="" type="button" value="+" />
-															<span id="Stock" class="tb-hidden">库存<span class="stock">1000</span>件</span>
+															<span id="Stock" class="tb-hidden">库存<span class="stock">{{$v->number}}</span>件</span>
 														</dd>
-
 													</div>
 													<div class="clear"></div>
 
@@ -267,7 +261,7 @@
 							<div class="pay-opt">
 							<a href="home.html"><span class="am-icon-home am-icon-fw">首页</span></a>
 							<a><span class="am-icon-heart am-icon-fw">收藏</span></a>
-							
+
 							</div>
 							<li>
 								<div class="clearfix tb-btn tb-btn-buy theme-login">
@@ -276,7 +270,7 @@
 							</li>
 							<li>
 								<div class="clearfix tb-btn tb-btn-basket theme-login">
-									<a id="LikBasket" title="加入购物车" href="#"><i></i>加入购物车</a>
+									<a id="LikBasket" title="加入购物车" href=""><i></i>加入购物车</a>
 								</div>
 							</li>
 						</div>
@@ -286,7 +280,7 @@
 					<div class="clear"></div>
 
 				</div>
-
+				@endforeach
 				<!--优惠套装-->
 				<div class="match">
 					<div class="match-title">优惠套装</div>
@@ -314,21 +308,21 @@
 					</div>
 				</div>
 				<div class="clear"></div>
-				
-							
+
+
 				<!-- introduce-->
 
 				<div class="introduce">
 					<div class="browse">
-					    <div class="mc"> 
-						     <ul>					    
-						     	<div class="mt">            
-						            <h2>看了又看</h2>        
+					    <div class="mc">
+						     <ul>
+						     	<div class="mt">
+						            <h2>看了又看</h2>
 					            </div>
-						     	
+
 							      <li class="first">
-							      	<div class="p-img">                    
-							      		<a  href="#"> <img class="" src="/home/images/browse1.jpg"> </a>               
+							      	<div class="p-img">
+							      		<a  href="#"> <img class="" src="/home/images/browse1.jpg"> </a>
 							      	</div>
 							      	<div class="p-name"><a href="#">
 							      		【三只松鼠_开口松子】零食坚果特产炒货东北红松子原味
@@ -337,8 +331,8 @@
 							      	<div class="p-price"><strong>￥35.90</strong></div>
 							      </li>
 							      <li>
-							      	<div class="p-img">                    
-							      		<a  href="#"> <img class="" src="/home/images/browse1.jpg"> </a>               
+							      	<div class="p-img">
+							      		<a  href="#"> <img class="" src="/home/images/browse1.jpg"> </a>
 							      	</div>
 							      	<div class="p-name"><a href="#">
 							      		【三只松鼠_开口松子】零食坚果特产炒货东北红松子原味
@@ -347,37 +341,37 @@
 							      	<div class="p-price"><strong>￥35.90</strong></div>
 							      </li>
 							      <li>
-							      	<div class="p-img">                    
-							      		<a  href="#"> <img class="" src="/home/images/browse1.jpg"> </a>               
+							      	<div class="p-img">
+							      		<a  href="#"> <img class="" src="/home/images/browse1.jpg"> </a>
 							      	</div>
 							      	<div class="p-name"><a href="#">
 							      		【三只松鼠_开口松子】零食坚果特产炒货东北红松子原味
 							      	</a>
 							      	</div>
 							      	<div class="p-price"><strong>￥35.90</strong></div>
-							      </li>							      
+							      </li>
 							      <li>
-							      	<div class="p-img">                    
-							      		<a  href="#"> <img class="" src="/home/images/browse1.jpg"> </a>               
+							      	<div class="p-img">
+							      		<a  href="#"> <img class="" src="/home/images/browse1.jpg"> </a>
 							      	</div>
 							      	<div class="p-name"><a href="#">
 							      		【三只松鼠_开口松子】零食坚果特产炒货东北红松子原味
 							      	</a>
 							      	</div>
 							      	<div class="p-price"><strong>￥35.90</strong></div>
-							      </li>							      
+							      </li>
 							      <li>
-							      	<div class="p-img">                    
-							      		<a  href="#"> <img class="" src="/home/images/browse1.jpg"> </a>               
+							      	<div class="p-img">
+							      		<a  href="#"> <img class="" src="/home/images/browse1.jpg"> </a>
 							      	</div>
 							      	<div class="p-name"><a href="#">
 							      		【三只松鼠_开口松子218g】零食坚果特产炒货东北红松子原味
 							      	</a>
 							      	</div>
 							      	<div class="p-price"><strong>￥35.90</strong></div>
-							      </li>							      
-					      
-						     </ul>					
+							      </li>
+
+						     </ul>
 					    </div>
 					</div>
 					<div class="introduceMain">
@@ -446,13 +440,13 @@
 								</div>
 
 								<div class="am-tab-panel am-fade">
-									
+
                                     <div class="actor-new">
-                                    	<div class="rate">                
-                                    		<strong>100<span>%</span></strong><br> <span>好评度</span>            
+                                    	<div class="rate">
+                                    		<strong>100<span>%</span></strong><br> <span>好评度</span>
                                     	</div>
-                                        <dl>                    
-                                            <dt>买家印象</dt>                    
+                                        <dl>
+                                            <dt>买家印象</dt>
                                             <dd class="p-bfc">
                                             			<q class="comm-tags"><span>味道不错</span><em>(2177)</em></q>
                                             			<q class="comm-tags"><span>颗粒饱满</span><em>(1860)</em></q>
@@ -462,10 +456,10 @@
                                             			<q class="comm-tags"><span>个个开口</span><em>(1392)</em></q>
                                             			<q class="comm-tags"><span>价格便宜</span><em>(1119)</em></q>
                                             			<q class="comm-tags"><span>特价买的</span><em>(865)</em></q>
-                                            			<q class="comm-tags"><span>皮很薄</span><em>(831)</em></q> 
-                                            </dd>                                           
-                                         </dl> 
-                                    </div>	
+                                            			<q class="comm-tags"><span>皮很薄</span><em>(831)</em></q>
+                                            </dd>
+                                         </dl>
+                                    </div>
                                     <div class="clear"></div>
 									<div class="tb-r-filter-bar">
 										<ul class=" tb-taglist am-avg-sm-4">
@@ -1115,7 +1109,7 @@
 
 				</div>
 			</div>
-			
+
 
 	</body>
 

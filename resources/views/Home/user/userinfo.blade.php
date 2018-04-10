@@ -65,8 +65,8 @@
 
 						<!--个人信息 -->
 						<div class="info-main">
-							<form class="am-form am-form-horizontal" action="{{ url('/home/center/userinfo_create') }}" method="POST">
-							{{ csrf_field() }}
+							<form class="am-form am-form-horizontal" action="" method="POST">
+
 								<div class="am-form-group">
 									<label for="user-name2" class="am-form-label">昵称</label>
 									<div class="am-form-content">

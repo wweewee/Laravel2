@@ -42,9 +42,6 @@
         }
     </script>
 
-
-
-
     <script>
 
         // $(function  () {

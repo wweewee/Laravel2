@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -12,13 +11,11 @@ class indexController extends Controller
     {
     	return view('admin.index');
     }
-
     // 内容欢迎页
     public function info()
     {
         return view('admin.welcome');
     }
-    
     //退出登录
     public function logout()
     {

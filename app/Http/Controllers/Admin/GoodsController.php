@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
 use App\Model\Goods;
 use App\Model\Admin\Cate;
 use Session;
@@ -20,15 +19,15 @@ class GoodsController extends Controller
         if($file->isValid()){
             //获取文件类型`(后缀名)
             $ext = $file->getClientOriginalExtension();    //文件拓展名
+
 //            生成新文件名
+
             $newfile = md5(date('YmdHis').rand(1000,9999).uniqid()).'.'.$ext;
             //1.将文件传到本地服务器上
             $path = $file->move(public_path().'/uploads',$newfile);
 
             $newfile = '/uploads/'.$newfile;
 
-
-            //2.返回上传文件路径
             return $newfile;
 
         }
@@ -59,6 +58,7 @@ class GoodsController extends Controller
      */
     public function create()
     {
+        //添加商品
         $cate = Cate::all();
         $cate = Cate::Cates($cate);
 //        dd($cate);
@@ -74,11 +74,9 @@ class GoodsController extends Controller
      */
     public function store(Request $request)
     {
-        
         //接受添加
         $input = $request->all();      //1.获取表单添加的数据
         $goods = new Goods();
-         // return($input);
         //2.添加到数据表              
         // $goods -> gname = $input['gname'];   
         // $goods -> money = $input['money'];
@@ -131,11 +129,21 @@ class GoodsController extends Controller
      */
     public function edit($id)
     {
+
         $cate = Cate::all();
         $cate = Cate::Cates($cate);
 //        dd($cate);
         //添加商品
         // return view('admin.goods.edit',compact('cate'));
+
+        //通过id查询单条数据
+//        $goods = Goods::findOrFail($id);
+        // dd($goods);
+//        return view('admin.goods.edit',compact('goods'));
+
+
+        $cate = Cate::all();
+        $cate = Cate::Cates($cate);
         //通过id查询单条数据
         $goods = Goods::findOrFail($id);
         // dd($goods);
@@ -151,17 +159,20 @@ class GoodsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request,$did)
-    {   
-            
-
+    {
+        // return 1111;
         //接受修改
-
         // 1.获取提交的数据
-        $goods = $request->input();
-       
+        $goods = $request->all();
         // 2.根据id找到要修改的内容的商品
         $comm = Goods::find($did);
-        
+        // dd($comm);
+        //接受修改
+        // 1.获取提交的数据
+        $goods = $request->input();
+        // 2.根据id找到要修改的内容的商品
+        $comm = Goods::find($did);
+
         // 3.  将商品属性改成提交过来的值
         $res = $comm->update([
             'money'=>$goods['money'],

@@ -1,14 +1,12 @@
 <?php
-
 namespace App\Http\Controllers\Home;
-
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Admin\Cate;
-
+use App\Model\Admin\Show;
+use App\Model\Admin\Huo;
 class IndexController extends Controller
 {
-
     public function index()
     {
         // 获取一级类
@@ -23,17 +21,8 @@ class IndexController extends Controller
 
             $arr[$v->name] = $two1;
         }
-
-        return view('home.index.index', compact('cate_one','arr'));
-        // dd($cates);
+        $res = Show::get();
+        $activity = Huo::get();
+        return view('home.index.index', compact('cate_one','arr','res','activity'));
     }
-
-
-
-    public function list()
-    {
-        return view('home.goods.list');
-    }
-
-
 }

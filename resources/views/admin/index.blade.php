@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-
+    <link rel="shortcut icon" href="/admin/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="/admin/css/font.css">
     <link rel="stylesheet" href="/admin/css/xadmin.css">
@@ -39,11 +39,11 @@
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
                 <dd><a onclick="x_admin_show('个人信息','http://www.baidu.com')">个人信息</a></dd>
                 <dd><a onclick="x_admin_show('切换帐号','http://www.baidu.com')">切换帐号</a></dd>
-                {{--<!-- <<<<<<< HEAD -->--}}
+
                 <dd><a href="{{ url('admin/logout') }}">退出</a></dd>
             </dl>
         </li>
-        <li class="layui-nav-item to-index"><a href="/">前台首页</a></li>
+        <li class="layui-nav-item to-index"><a href="/home/index">前台首页</a></li>
     </ul>
 
 </div>
@@ -85,7 +85,7 @@
             </li>
             <li>
                 <a href="javascript:;">
-                    <i class="iconfont">&#xe723;</i>
+                    <i class="iconfont layui-icon">&#xe62a;</i>
                     <cite>分类管理</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
@@ -116,6 +116,36 @@
                         <a _href="{{ url('admin/goods') }}">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>商品详情</cite>
+                        </a>
+                    </li >
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <i class="iconfont layui-icon">&#xe634;</i>
+                    <cite>轮播图</cite>
+                    <i class="iconfont nav_right">&#xe697;</i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a _href="{{ url('admin/show/index') }}">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>轮播图管理</cite>
+                        </a>
+                    </li >
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <i class="iconfont layui-icon">&#xe650;</i>
+                    <cite>活动管理</cite>
+                    <i class="iconfont nav_right">&#xe697;</i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a _href="{{ url('admin/activity/index') }}">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>活动管理</cite>
                         </a>
                     </li >
                 </ul>

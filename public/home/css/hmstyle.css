@@ -701,7 +701,7 @@ filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#f8c375',endCo
 /*第二套轮播图布局*/	
 .bannerTwo{position: absolute;left:187px;;width:760px ;}
 /*公告布局*/
-.marqueen {width:220px;height: 404px;text-align: left;top:60px;padding: 10px;}
+.marqueen {width:220px;height: 432px;text-align: left;top:47px;padding: 10px;}
 .demo{padding-top: 5px;}
 .demo li, .demo li.title-first {height: 26px;line-height: 26px;}
 .marqueen-title{display: block;margin-left:5px ;margin-top: 10px;}
