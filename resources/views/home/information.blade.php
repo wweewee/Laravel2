@@ -161,7 +161,7 @@
 								<div class="am-form-group">
 									<label for="user-email" class="am-form-label">电子邮件</label>
 									<div class="am-form-content">
-										<input id="user-email" placeholder="Email" type="email" name="email" value="{{ Session('user')->email }}">
+										<input id="user-email" placeholder="Email" type="email" name="email" value="{{ Session('user')->email}}">
 
 									</div>
 								</div>

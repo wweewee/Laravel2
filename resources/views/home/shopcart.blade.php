@@ -95,6 +95,7 @@
 
 							<div class="clear"></div>
 							<div class="bundle-main">
+
 								@foreach($cart as $v)
 								<ul class="item-content clearfix">
 
@@ -152,6 +153,7 @@
 								</ul>
 
 								@endforeach
+
 							</div>
 						</div>
 					</tr>
